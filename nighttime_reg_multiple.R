@@ -147,8 +147,7 @@ night_fun <- function(site, reg_start, reg_end){
        #####   
           
     }
-  
-  
+    
   #and return the daily file
   daily
 }

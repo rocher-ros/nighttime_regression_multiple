@@ -17,6 +17,15 @@ suppressPackageStartupMessages({
 ### This example would do the night time regression of the periods: 17-22;18-23;19-24;20-01;21-02;22-03 and save the best one
 ### The output consists in a dataframe with the day, slope,  slope.se, intercept, intercept,se, r2, and k600 as (d-1)
 
+lm_eqn <- function(x,y){
+  m <- lm(y ~ (x));
+  eq <- substitute(italic(y) == a +  b %.% italic(x)*","~~italic(r)^2~"="~r2, 
+                   list(a = format(coef(m)[1], digits = 2), 
+                        b = format(coef(m)[2], digits = 2), 
+                        r2 = format(summary(m)$r.squared, digits = 3)))
+  as.character(as.expression(eq));                 
+} 
+
 
 night_fun <- function(site, reg_start, reg_end){
   

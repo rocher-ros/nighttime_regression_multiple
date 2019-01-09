@@ -54,7 +54,7 @@ night_fun <- function(site, reg_start, reg_size, num_reg , timesteps){
     
     
     #Smooth O2 data and calculate dC/dt
-    oxyf1<-stats::filter(test$DO.obs,rep(1/9,9), sides=2)
+    oxyf1<-stats::filter(test$DO.obs,rep(1/3,3), sides=2)
     oxyf2<-  oxyf1[c(-1,-length(oxyf1))]
     #Convert the values to  mgO2 L-1 day-1. Careful, if your data is not with 10min frequency you need to change this
     test$deltaO2<-c(0,0,0,((oxyf2[-1]-oxyf2[-length(oxyf2)])/timesteps)*1440)

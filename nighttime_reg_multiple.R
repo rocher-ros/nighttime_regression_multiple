@@ -10,7 +10,7 @@ suppressPackageStartupMessages({
 
 #### OBTAINING K WITH NIGHT TIME REGRESSIONS ####
 ### IT NEEDS A FILE WITH A  TIME, TEMPERATURE, DISSOLVED OXYGEN, and DISSOLVED OXYGEN AT 100% sat
-### IMPORTANT, WITH THE HEADINGS "solar.time", "temp.water", "DO.obs" , "DO.sat".
+### IMPORTANT, WITH THE HEADINGS "local.time", "temp.water", "DO.obs" , "DO.sat".
 ### It performs several regressions for each day, moving the window of data for the regression, and saving the best regression
 ### You need to add several parameters: 
 ###     site = the file with the data
